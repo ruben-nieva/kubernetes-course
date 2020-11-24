@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod-by-pod
+  name: pod-by-pod
+spec:
+  containers:
+  - image: alpine
+    name: alpine-container
+    command: ["/bin/sh"]
+    args: ["-c", "echo \"Kubernetes course.\"; sleep 100"]
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
